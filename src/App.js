@@ -1,34 +1,16 @@
 import React from "react";
 
-class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { count: 5 };
-    this.handleDecrement = this.handleDecrement.bind(this);
-    this.handleIncrement = this.handleIncrement.bind(this);
-  }
-  // the use of this to access values is really needed everyone.. pretty much.
-  handleDecrement() {
-    this.setState((curState) => {
-      return { count: curState.count - 1 };
-    });
-  }
-
-  handleIncrement() {
-    this.setState((curState) => {
-      return { count: curState.count + 1 };
-    });
-  }
+class App extends React.Component {
   render() {
     return (
-      <div>
-        <button onClick={this.handleDecrement}>-</button>
-        <span>{this.state.count}</span>
-        <button onClick={this.handleIncrement}>+</button>
+      <div className="app">
+        <h1>Classy Weather</h1>
+        <div>
+          <input type="text" placeholder="Search from location..." />
+        </div>
       </div>
     );
   }
 }
 
-export default Counter;
+export default App;
